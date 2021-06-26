@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Classroom Scheduler</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="event.js"></script>
+        <link rel="stylesheet" href="event.css">
+    </head>
+    <body onload="renderDate()">
+        <h2 class="header">Classroom Scheduler</h2>
+        <div class="container">
+            <div class="calendar">
+                <div class="month">
+                    <div class="prev" onclick="moveDate('prev')"><span>&#10094;</span></div>
+                    <div>
+                        <h1 id="month"></h1>
+                        <p id="year"></p>
+                    </div>
+                    <div class="next" onclick="moveDate('next')"><span>&#10095;</span></div>
+                </div>
+                <div class="week-days">
+                    <div>SUN</div>
+                    <div>MON</div>
+                    <div>TUE</div>
+                    <div>WED</div>
+                    <div>THU</div>
+                    <div>FRI</div>
+                    <div>SAT</div>
+                </div>
+                <div class="days"></div>
+                <form class="form" target="_blank" name="myform" method="GET" action="http://localhost:8070/ShowScheduler">
+                <div class="actions">
+                <button id="addevent" onclick="addevents1('addevent')">Add Event</button>
+                <button id="allevent">All Events</button>
+            </div></div></form>
+        </div>
+        <div id="mymodal" class="modal">
+            <div class="mcontent">
+              <form class="form" target="_blank" name="myform" method="GET" action="http://localhost:8070/ClassroomScheduler">
+                  <h1 id="modalheader">ADD EVENT</h1>
+                  <input type="text" id="teacher" placeholder="Name of the Teacher" name="teachername">
+                  <input type="text" id="event" placeholder="Event Name" name="eventname">
+                  <span><b style="color: #dfebed;">From:</b><input id="from" type="datetime-local" placeholder="select date and time"  onfocus="(this.type='datetime-local')" name="startdate"></span>
+                  <span><b style="color: #dfebed;">To:</b><input id="to" type="datetime-local" placeholder="select date and time" onfocus="(this.type='datetime-local')" name="enddate"></span>
+                  <span style="color: #dfebed;"><b>Details:</b><textarea  id="details" placeholder="Add Details" name="det"></textarea></span>
+                  <div class="actions">
+                      <!--<input type ="submit" class="save" value="save">
+                      <input type ="reset" class="dismiss" value="dismiss">-->
+                    <button class="save" onclick="alert('Event has been added successfully')">Save</button>
+                    
+                    <button class="dismiss" onclick="alert('Dismissed successfully')">Dismiss</button>
+                  </div>
+              </form>
+            </div>
+         </div>
+    </body>
