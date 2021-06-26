@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+  }
+  
+  body, html {
+    height: 100%;
+  }
+
+  body {
+    background: #dfebed;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .container{
+    align-items: center;
+    display: flex;
+    height: 73%;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .calendar {
+    background: #2b4450;
+    border-radius: 4px;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, .3);
+    perspective: 1000;
+    transition: .9s;
+    transform-style: preserve-3d;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .month{
+    border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+    background-color: #f78536;
+    align-items: center;
+  }
+  .header{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px;
+    padding-top: 30px;
+  }
+  .month h1 {
+    color: #dfebed;
+    font-size: 2.7em;
+    font-weight: bolder;
+  }
+
+  .month p{
+    color: #dfebed;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .week-days {
+    color: #dfebed;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .days {
+    font-weight: 500;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: #dfebed;
+  }
+  
+  .days div {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    transition: all 0.4s;
+    text-align: center;
+    width: 14.28%;
+  }
+  .prev, .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 23px;
+    background-color: #ff6a00;
+    color:#dfebed;
+    transition: all 0.4s;
+  }
+
+  .prev:hover, .next:hover {
+    cursor: pointer;
+    background-color: #ffaa6d;
+  }
+
+  .prev_date,.nexti {
+    opacity: 60%;
+  }
+
+  .today {
+    background: #f78536;
+    border-radius: 5%;
+  }
+
+  .days div:hover {
+    cursor: pointer;
+    background-color: #f78536;
+    border-radius: 5%;
+  }
+
+  #addevent,#allevent{
+    display: flex;
+    height: 68%;
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%;
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    font-size: 15px;
+    background-color: #f78536;
+    color: white;
+    border: 5px solid #2b4450;
+    border-radius: 3px; 
+  }
+
+  #addevent:hover,#allevent:hover {
+    cursor: pointer;
+    background-color: #ffaa6d;
+  }
+   
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;  
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+    .mcontent {
+    background-color: #2b4450;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 46%;
+    height: 77vh;
+    border-radius: 5px;
+    border: 2px solid #f78536
+  }
+   
+  #event, #from, #to, #details, #teacher{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  
+  #modalheader{
+      color: #f78536;
+      text-align: center;
+      padding-top: 0px;
+  }
+
+  .actions {
+    bottom: 0;
+    display: flex;
+    border-top: 1px solid #f78536;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .actions button {
+    background: none;
+    border: 0;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 30px 0px;
+    text-transform: uppercase;
+    width: 50%;
+  }
+  
+  .actions button:first-of-type {
+    border-right: 1px solid #f78536;
+  }
+  
+  .actions button:hover {
+    background: #497285;
+    cursor: pointer;
+  }
+  
+  .actions button:active {
+    background: #5889a0;
+    outline: none;
+  }
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
